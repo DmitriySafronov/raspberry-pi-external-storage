@@ -1,0 +1,13 @@
+[Unit]
+Description=External storage: /var/log/journal
+Requires=mnt-storage-mountpoints.service
+AssertPathExists=/mnt/storage/var/log/journal
+
+[Mount]
+Where=/var/log/journal
+What=/mnt/storage/var/log/journal
+Type=none
+Options=bind
+
+[Install]
+WantedBy=multi-user.target

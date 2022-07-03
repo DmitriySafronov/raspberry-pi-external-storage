@@ -1,0 +1,13 @@
+[Unit]
+Description=External storage: /home
+Requires=mnt-storage-mountpoints.service
+AssertPathExists=/mnt/storage/home
+
+[Mount]
+Where=/home
+What=/mnt/storage/home
+Type=none
+Options=bind
+
+[Install]
+WantedBy=multi-user.target

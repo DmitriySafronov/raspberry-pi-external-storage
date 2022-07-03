@@ -1,0 +1,13 @@
+[Unit]
+Description=External storage: /var/lib/containerd
+Requires=mnt-storage-mountpoints.service
+AssertPathExists=/mnt/storage/var/lib/containerd
+
+[Mount]
+Where=/var/lib/containerd
+What=/mnt/storage/var/lib/containerd
+Type=none
+Options=bind
+
+[Install]
+WantedBy=multi-user.target

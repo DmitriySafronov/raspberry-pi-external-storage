@@ -1,0 +1,10 @@
+[Unit]
+Description=Create external storage mountpoint
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/env mkdir -p /mnt/storage
+
+[Install]
+WantedBy=multi-user.target

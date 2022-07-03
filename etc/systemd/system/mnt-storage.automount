@@ -1,0 +1,8 @@
+[Unit]
+Description=Automount external storage
+
+[Automount]
+Where=/mnt/storage
+
+[Install]
+WantedBy=multi-user.target

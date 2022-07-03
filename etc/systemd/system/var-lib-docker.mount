@@ -1,0 +1,13 @@
+[Unit]
+Description=External storage: /var/lib/docker
+Requires=mnt-storage-mountpoints.service
+AssertPathExists=/mnt/storage/var/lib/docker
+
+[Mount]
+Where=/var/lib/docker
+What=/mnt/storage/var/lib/docker
+Type=none
+Options=bind
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=External storage
+Requires=mnt-storage.service
+AssertPathExists=/mnt/storage
+
+[Mount]
+Where=/mnt/storage
+What=/dev/disk/by-label/storage
+Type=ext4
+Options=defaults
+
+[Install]
+WantedBy=multi-user.target

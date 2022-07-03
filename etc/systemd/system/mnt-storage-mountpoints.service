@@ -1,0 +1,12 @@
+[Unit]
+Requires=mnt-storage.mount
+Description=Create essential directories on external storage
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/env mkdir -p /mnt/storage/var/log/journal
+ExecStart=/usr/bin/env mkdir -p /mnt/storage/home
+
+[Install]
+WantedBy=multi-user.target
